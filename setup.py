@@ -22,12 +22,12 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='ome-ansible-molecule-dependencies',
-    version='0.0.1',
+    version='0.1.0',
 
     description='Dependencies for testing OME Ansible roles',
     long_description=long_description,
 
-    url='https://github.com/ome/ome-ansible-molecule-dependencies',
+    url='https://github.com/openmicroscopy/ome-ansible-molecule-dependencies',
 
     author='The Open Microscopy Team',
     author_email='ome-devel@lists.openmicroscopy.org.uk',
