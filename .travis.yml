@@ -7,4 +7,6 @@ virtualenv:
 
 sudo: false
 
+install: pip install --upgrade setuptools
+
 script: ./setup.py install
