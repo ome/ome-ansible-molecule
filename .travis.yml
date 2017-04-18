@@ -35,7 +35,6 @@ env:
 - ROLE=docker-tools
 - ROLE=haproxy
 - ROLE=ice
-- ROLE=java
 - ROLE=jekyll-build
 - ROLE=local-accounts
 - ROLE=logrotate
@@ -52,7 +51,6 @@ env:
 #- ROLE=omero-common
 - ROLE=omero-logmonitor
 - ROLE=omero-python-deps
-- ROLE=omero-server
 #- ROLE=omero-web
 #- ROLE=omero-web-apps
 - ROLE=omero-web-runtime
@@ -70,3 +68,5 @@ env:
 
 matrix:
   allow_failures:
+  - ROLE=java
+  - ROLE=omero-server
