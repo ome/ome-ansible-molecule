@@ -1,12 +1,72 @@
+---
+sudo: required
 language: python
+
+services:
+  - docker
 
 python: "2.7"
 
 virtualenv:
-  system_site_packages: true
+  system_site_packages: false
 
-sudo: false
+install:
+- pip install --upgrade setuptools
+- pip install .
 
-install: pip install --upgrade setuptools
+script:
+- ansible-galaxy install openmicroscopy.$ROLE --roles-path . --no-deps
+# molecule test playbooks expect the directory to match the repository name
+- mv openmicroscopy.$ROLE ansible-role-$ROLE
+- cd ansible-role-$ROLE
+# TODO: Some of these roles aren't using molecule
+- if [[ -f molecule.yml ]]; then molecule test; fi
 
-script: ./setup.py install
+# To limit the scope only openmicroscopy galaxy roles should be tested:
+# curl -s https://galaxy.ansible.com/openmicroscopy/ | grep '<td><a href="' | sed -re 's%.+/openmicroscopy/([^/]+)/.+%- ROLE=\1%'
+
+env:
+- ROLE=analysis-tools
+- ROLE=basedeps
+#- ROLE=celery-docker
+- ROLE=cli-utils
+- ROLE=devspace
+- ROLE=docker
+- ROLE=docker-tools
+- ROLE=haproxy
+- ROLE=ice
+- ROLE=java
+- ROLE=jekyll-build
+- ROLE=local-accounts
+- ROLE=logrotate
+- ROLE=lvm-partition
+- ROLE=munin
+- ROLE=munin-node
+- ROLE=network-cloud-interfaces
+- ROLE=nfs-mount
+- ROLE=nfs-share
+- ROLE=nginx
+- ROLE=nginx-proxy
+- ROLE=nginx-ssl-selfsigned
+#- ROLE=omego
+#- ROLE=omero-common
+- ROLE=omero-logmonitor
+- ROLE=omero-python-deps
+- ROLE=omero-server
+#- ROLE=omero-web
+#- ROLE=omero-web-apps
+- ROLE=omero-web-runtime
+- ROLE=openstack-volume-storage
+- ROLE=postgresql
+- ROLE=python-pydata
+- ROLE=redis
+- ROLE=rsync-server
+- ROLE=samba-client
+- ROLE=selinux-utils
+- ROLE=storage-volume-initialise
+- ROLE=sudoers
+- ROLE=upgrade-distpackages
+- ROLE=versioncontrol-utils
+
+matrix:
+  allow_failures:
