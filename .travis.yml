@@ -73,5 +73,5 @@ env:
 
 matrix:
   allow_failures:
-  - ROLE=java
-  - ROLE=omero-server
+  - ROLE=omero-common
+  # TODO: workaround for https://github.com/ansible/galaxy-issues/issues/259
