@@ -19,12 +19,8 @@ script:
 # molecule test playbooks expect the directory to match the repository name
 - mv openmicroscopy.$ROLE ansible-role-$ROLE
 - cd ansible-role-$ROLE
-# TODO: Some of these roles aren't using molecule
-- if [[ -f molecule.yml ]]; then molecule test; fi
 
-# To limit the scope only openmicroscopy galaxy roles should be tested:
-# curl -s https://galaxy.ansible.com/openmicroscopy/ | grep '<td><a href="' | sed -re 's%.+/openmicroscopy/([^/]+)/.+%- ROLE=\1%'
-
+### GENERATED ###
 env:
 - ROLE=analysis-tools
 - ROLE=basedeps
@@ -65,6 +61,7 @@ env:
 - ROLE=sudoers
 - ROLE=upgrade-distpackages
 - ROLE=versioncontrol-utils
+### GENERATED ###
 
 matrix:
   allow_failures:
