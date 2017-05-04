@@ -48,7 +48,6 @@ env:
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
 - ROLE=omego
-- ROLE=omero-common
 - ROLE=omero-logmonitor
 - ROLE=omero-python-deps
 - ROLE=omero-server
@@ -70,8 +69,3 @@ env:
 - ROLE=upgrade-distpackages
 - ROLE=versioncontrol-utils
 ### GENERATED ###
-
-matrix:
-  allow_failures:
-  - ROLE=omero-common
-  # TODO: workaround for https://github.com/ansible/galaxy-issues/issues/259
