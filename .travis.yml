@@ -19,6 +19,7 @@ script:
 # molecule test playbooks expect the directory to match the repository name
 - mv openmicroscopy.$ROLE ansible-role-$ROLE
 - cd ansible-role-$ROLE
+- molecule test
 
 ### GENERATED ###
 env:
