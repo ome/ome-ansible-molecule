@@ -23,17 +23,15 @@ script:
 
 ### GENERATED ###
 env:
-- ROLE=analysis-tools
 - ROLE=basedeps
 - ROLE=cadvisor
 - ROLE=celery-docker
-- ROLE=cli-utils
 - ROLE=docker
 - ROLE=docker-tools
-- ROLE=haproxy
 - ROLE=hosts-populate
 - ROLE=ice
 - ROLE=java
+- ROLE=jekyll-build
 - ROLE=local-accounts
 - ROLE=logrotate
 - ROLE=lvm-partition
@@ -51,7 +49,6 @@ env:
 - ROLE=omero-server
 - ROLE=omero-user
 - ROLE=omero-web
-- ROLE=omero-web-apps
 - ROLE=omero-web-runtime
 - ROLE=openstack-volume-storage
 - ROLE=postgresql
