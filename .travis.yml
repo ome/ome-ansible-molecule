@@ -19,54 +19,47 @@ script:
 # molecule test playbooks expect the directory to match the repository name
 - mv openmicroscopy.$ROLE ansible-role-$ROLE
 - cd ansible-role-$ROLE
-# TODO: Some of these roles aren't using molecule
-- if [[ -f molecule.yml ]]; then molecule test; fi
+- ../test.sh
 
-# To limit the scope only openmicroscopy galaxy roles should be tested:
-# curl -s https://galaxy.ansible.com/openmicroscopy/ | grep '<td><a href="' | sed -re 's%.+/openmicroscopy/([^/]+)/.+%- ROLE=\1%'
-
+### GENERATED ###
 env:
-- ROLE=analysis-tools
 - ROLE=basedeps
-#- ROLE=celery-docker
-- ROLE=cli-utils
-- ROLE=devspace
+- ROLE=cadvisor
+- ROLE=celery-docker
 - ROLE=docker
 - ROLE=docker-tools
-- ROLE=haproxy
+- ROLE=hosts-populate
 - ROLE=ice
+- ROLE=java
 - ROLE=jekyll-build
 - ROLE=local-accounts
 - ROLE=logrotate
 - ROLE=lvm-partition
 - ROLE=munin
-- ROLE=munin-node
+- ROLE=mysql-backup
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
-- ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
-#- ROLE=omego
-#- ROLE=omero-common
+- ROLE=omego
 - ROLE=omero-logmonitor
 - ROLE=omero-python-deps
-#- ROLE=omero-web
-#- ROLE=omero-web-apps
+- ROLE=omero-server
+- ROLE=omero-user
+- ROLE=omero-web
 - ROLE=omero-web-runtime
 - ROLE=openstack-volume-storage
 - ROLE=postgresql
 - ROLE=python-pydata
+- ROLE=reboot-server
 - ROLE=redis
 - ROLE=rsync-server
 - ROLE=samba-client
 - ROLE=selinux-utils
 - ROLE=storage-volume-initialise
 - ROLE=sudoers
+- ROLE=system-monitor-agent
 - ROLE=upgrade-distpackages
 - ROLE=versioncontrol-utils
-
-matrix:
-  allow_failures:
-  - ROLE=java
-  - ROLE=omero-server
+### GENERATED ###
