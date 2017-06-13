@@ -39,7 +39,6 @@ env:
 - ROLE=mysql-backup
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
-- ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
