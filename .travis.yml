@@ -28,6 +28,7 @@ env:
 - ROLE=celery-docker
 - ROLE=docker
 - ROLE=docker-tools
+- ROLE=haproxy
 - ROLE=hosts-populate
 - ROLE=ice
 - ROLE=java
@@ -36,9 +37,11 @@ env:
 - ROLE=logrotate
 - ROLE=lvm-partition
 - ROLE=munin
+- ROLE=munin-node
 - ROLE=mysql-backup
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
+- ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
@@ -48,6 +51,7 @@ env:
 - ROLE=omero-server
 - ROLE=omero-user
 - ROLE=omero-web
+- ROLE=omero-web-apps
 - ROLE=omero-web-runtime
 - ROLE=openstack-volume-storage
 - ROLE=postgresql
@@ -63,3 +67,18 @@ env:
 - ROLE=upgrade-distpackages
 - ROLE=versioncontrol-utils
 ### GENERATED ###
+
+matrix:
+  allow_failures:
+  # Uses a non-standard test from upstream
+  - env: ROLE=haproxy
+  # Molecule test requires vagrant
+  - env: ROLE=hosts-populate
+  # No molecule.yml or test.yml (tested by munin role)
+  - env: ROLE=munin-node
+  # Molecule test requires vagrant
+  - env: ROLE=nfs-share
+  # Molecule test doesn't work
+  - env: ROLE=omero-logmonitor
+  # Broken (deprecated?)
+  - env: ROLE=omero-web-apps
