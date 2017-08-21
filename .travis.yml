@@ -19,6 +19,9 @@ script:
 # molecule test playbooks expect the directory to match the repository name
 - mv openmicroscopy.$ROLE ansible-role-$ROLE
 - cd ansible-role-$ROLE
+# Some roles can't be properly tested in Docker
+# These should provide an alternative configuration just for testing syntax
+- if [ -f molecule-docker.yml ]; then mv molecule-docker.yml molecule.yml; fi
 - ../test.sh
 
 ### GENERATED ###
@@ -29,6 +32,7 @@ env:
 - ROLE=docker
 - ROLE=docker-tools
 - ROLE=haproxy
+# Syntax only
 - ROLE=hosts-populate
 - ROLE=ice
 - ROLE=java
@@ -41,6 +45,7 @@ env:
 - ROLE=mysql-backup
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
+# Syntax only
 - ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
@@ -68,16 +73,14 @@ env:
 - ROLE=versioncontrol-utils
 ### GENERATED ###
 
+### molecule syntax check only
+
 matrix:
   allow_failures:
   # Uses a non-standard test from upstream
   - env: ROLE=haproxy
-  # Molecule test requires vagrant
-  - env: ROLE=hosts-populate
   # No molecule.yml or test.yml (tested by munin role)
   - env: ROLE=munin-node
-  # Molecule test requires vagrant
-  - env: ROLE=nfs-share
   # Molecule test doesn't work
   - env: ROLE=omero-logmonitor
   # Broken (deprecated?)
