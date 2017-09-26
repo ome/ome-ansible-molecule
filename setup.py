@@ -70,6 +70,6 @@ setup(
     install_requires=[
         'ansible==2.3.2',
         'docker',
-        'molecule==1.25',
+        'molecule==1.25.1',
     ],
 )
