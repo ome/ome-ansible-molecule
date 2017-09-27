@@ -67,10 +67,9 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    # Bug in Ansible 2.2.2: https://github.com/ansible/ansible/issues/23016
     install_requires=[
-        'ansible==2.3.1',
+        'ansible==2.3.2',
         'docker',
-        'molecule==1.25',
+        'molecule==1.25.1',
     ],
 )

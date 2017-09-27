@@ -19,6 +19,9 @@ script:
 # molecule test playbooks expect the directory to match the repository name
 - mv openmicroscopy.$ROLE ansible-role-$ROLE
 - cd ansible-role-$ROLE
+# Some roles can't be properly tested in Docker
+# These should provide an alternative configuration just for testing syntax
+- if [ -f molecule-docker.yml ]; then mv molecule-docker.yml molecule.yml; fi
 - ../test.sh
 
 ### GENERATED ###
@@ -28,6 +31,8 @@ env:
 - ROLE=celery-docker
 - ROLE=docker
 - ROLE=docker-tools
+- ROLE=haproxy
+# Syntax only
 - ROLE=hosts-populate
 - ROLE=ice
 - ROLE=java
@@ -36,9 +41,12 @@ env:
 - ROLE=logrotate
 - ROLE=lvm-partition
 - ROLE=munin
+- ROLE=munin-node
 - ROLE=mysql-backup
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
+# Syntax only
+- ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
@@ -48,6 +56,7 @@ env:
 - ROLE=omero-server
 - ROLE=omero-user
 - ROLE=omero-web
+- ROLE=omero-web-apps
 - ROLE=omero-web-runtime
 - ROLE=openstack-volume-storage
 - ROLE=postgresql
@@ -63,3 +72,16 @@ env:
 - ROLE=upgrade-distpackages
 - ROLE=versioncontrol-utils
 ### GENERATED ###
+
+### molecule syntax check only
+
+matrix:
+  allow_failures:
+  # Uses a non-standard test from upstream
+  - env: ROLE=haproxy
+  # No molecule.yml or test.yml (tested by munin role)
+  - env: ROLE=munin-node
+  # Molecule test doesn't work
+  - env: ROLE=omero-logmonitor
+  # Broken (deprecated?)
+  - env: ROLE=omero-web-apps
