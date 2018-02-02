@@ -71,7 +71,7 @@ setup(
         'ansible==2.4',
         'docker',
         'docker-compose',
-        'molecule==1.25',
+        'molecule>=2.4
         'os_client_config',
         'shade',
     ],
