@@ -26,13 +26,18 @@ script:
 
 ### GENERATED ###
 env:
+- ROLE=analysis-tools
 - ROLE=basedeps
 - ROLE=cadvisor
 - ROLE=celery-docker
+- ROLE=cli-utils
+- ROLE=debug-dumpallvars
+- ROLE=devspace
 - ROLE=docker
+- ROLE=docker-slack-notifier
 - ROLE=docker-tools
+- ROLE=fluentd
 - ROLE=haproxy
-# Syntax only
 - ROLE=hosts-populate
 - ROLE=ice
 - ROLE=java
@@ -43,14 +48,15 @@ env:
 - ROLE=munin
 - ROLE=munin-node
 - ROLE=mysql-backup
+- ROLE=network
 - ROLE=network-cloud-interfaces
 - ROLE=nfs-mount
-# Syntax only
 - ROLE=nfs-share
 - ROLE=nginx
 - ROLE=nginx-proxy
 - ROLE=nginx-ssl-selfsigned
 - ROLE=omego
+- ROLE=omero-common
 - ROLE=omero-logmonitor
 - ROLE=omero-python-deps
 - ROLE=omero-server
@@ -60,7 +66,12 @@ env:
 - ROLE=omero-web-runtime
 - ROLE=openstack-volume-storage
 - ROLE=postgresql
+- ROLE=prometheus
+- ROLE=prometheus-jmx
+- ROLE=prometheus-node
+- ROLE=prometheus-postgres
 - ROLE=python-pydata
+- ROLE=python-virtualenv-upstream
 - ROLE=reboot-server
 - ROLE=redis
 - ROLE=rsync-server
