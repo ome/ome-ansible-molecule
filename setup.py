@@ -68,8 +68,8 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
+        'molecule==1.25.1',
         'ansible==2.3.2',
         'docker',
-        'molecule==1.25.1',
     ],
 )
