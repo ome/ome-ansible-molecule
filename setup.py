@@ -70,6 +70,7 @@ setup(
     install_requires=[
         'ansible==2.4',
         'docker',
+        'docker-py',
         'docker-compose',
         'molecule>=2.4',
         'os_client_config',
