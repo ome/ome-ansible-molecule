@@ -22,7 +22,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='ome-ansible-molecule',
-    version='0.3.2.dev1',
+    version='0.4.0.dev1',
 
     description='Dependencies for testing OME Ansible roles',
     long_description=long_description,
