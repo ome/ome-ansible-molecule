@@ -69,7 +69,7 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
         'ansible==2.6.3',
-        'docker-compose',
+        'docker-compose==1.22.0',
         'molecule>=2.4'
     ],
 )
