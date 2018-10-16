@@ -21,13 +21,13 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='ome-ansible-molecule-dependencies',
-    version='0.3.2.dev1',
+    name='ome-ansible-molecule',
+    version='0.4.0.dev1',
 
     description='Dependencies for testing OME Ansible roles',
     long_description=long_description,
 
-    url='https://github.com/openmicroscopy/ome-ansible-molecule-dependencies',
+    url='https://github.com/openmicroscopy/ome-ansible-molecule',
 
     author='The Open Microscopy Team',
     author_email='ome-devel@lists.openmicroscopy.org.uk',
@@ -68,8 +68,8 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        'molecule==1.25.1',
-        'ansible==2.3.2',
-        'docker',
+        'ansible==2.6.3',
+        'docker-compose==1.22.0',
+        'molecule>=2.4'
     ],
 )
