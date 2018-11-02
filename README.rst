@@ -21,7 +21,7 @@ Example `.travis.yml` file for testing Ansible roles:
       - docker
 
     install:
-      - pip install ome-ansible-molecule
+      - pip install "ome-ansible-molecule<0.5"
 
     script:
       - molecule test
