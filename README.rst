@@ -9,7 +9,7 @@ Dependencies for testing OME Ansible roles with Molecule
 
 A meta-package that installs common dependencies required to test most `OME Ansible Galaxy roles <https://galaxy.ansible.com/openmicroscopy/>`_.
 
-Example `.travis.yml` file for testing Ansible roles:
+Example ``.travis.yml`` file for testing Ansible roles:
 
 ..  code-block:: yaml
 
