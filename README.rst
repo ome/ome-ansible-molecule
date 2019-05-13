@@ -1,8 +1,8 @@
 Dependencies for testing OME Ansible roles with Molecule
 ========================================================
 
-.. image:: https://travis-ci.org/openmicroscopy/ome-ansible-molecule.png
-   :target: http://travis-ci.org/openmicroscopy/ome-ansible-molecule
+.. image:: https://travis-ci.org/ome/ome-ansible-molecule.png
+   :target: https://travis-ci.org/ome/ome-ansible-molecule
 
 .. image:: https://badge.fury.io/py/ome-ansible-molecule.svg
     :target: https://badge.fury.io/py/ome-ansible-molecule

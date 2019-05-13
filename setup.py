@@ -27,7 +27,7 @@ setup(
     description='Dependencies for testing OME Ansible roles',
     long_description=long_description,
 
-    url='https://github.com/openmicroscopy/ome-ansible-molecule',
+    url='https://github.com/ome/ome-ansible-molecule',
 
     author='The Open Microscopy Team',
     author_email='ome-devel@lists.openmicroscopy.org.uk',
