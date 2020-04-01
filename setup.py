@@ -68,7 +68,8 @@ setup(
     install_requires=[
         'ansible==2.6.18',
         'docker-compose==1.22.0',
-        'molecule==2.19'
+        'molecule==2.19',
+        'jmespath',
     ],
     python_requires='>=3',
 )
