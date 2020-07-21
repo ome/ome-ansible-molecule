@@ -71,5 +71,5 @@ setup(
         'molecule==2.22',
         'jmespath==0.10.0',
     ],
-    python_requires='>=3',
+    python_requires='>=3.6',
 )
