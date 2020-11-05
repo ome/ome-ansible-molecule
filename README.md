@@ -34,18 +34,6 @@ When `tox.ini` is found, [tox](https://tox.readthedocs.io/en/latest/) is used to
 
 ## Inputs
 
-### `namespace`
-
-The Docker Hub namespace where the image is in. Default `"robertdebock"`.
-
-### `image`
-
-The image you want to run on. Default `"fedora"`.
-
-### `tag`
-
-The tag of the container image to use. Default `"latest"`.
-
 ### `options`
 
 The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#tox). For example `parallel`. Default `""`. (empty)
@@ -60,7 +48,7 @@ The molecule scenario to run. Default `"default"`
 
 ## Example usage
 
-Here is a default configuration that tests your role on `namespace: robertdebock`, `image: fedora`, `tag: latest`.
+Here is a default configuration.
 
 ```yaml
 ---
@@ -76,55 +64,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.6.3
+        uses: manics/action-ome-molecule@master
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
-
-If you want to test your role against multiple distributions, you can use this pattern:
-
-```yaml
----
-name: CI
-
-on:
-  - push
-
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: robertdebock/molecule-action@2.6.3
-        with:
-          command: lint
-  test:
-    needs:
-      - lint
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        image:
-          - alpine
-          - amazonlinux
-          - debian
-          - centos
-          - fedora
-          - opensuse
-          - ubuntu
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: robertdebock/molecule-action@2.6.3
-        with:
-          image: "${{ matrix.image }}"
-          options: parallel
-          scenario: my_specific_scenario
-```
