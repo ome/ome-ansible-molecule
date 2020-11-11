@@ -18,9 +18,9 @@ inputs:
 runs:
   using: docker
   # ## TODO: compare run-time of pulling a pre-built image:
-  image: 'docker://manics/docker-github-action-molecule:latest'
+  # image: 'docker://manics/docker-github-action-molecule:latest'
   # ## vs building the image in the action:
-  # image: 'Dockerfile'
+  image: 'Dockerfile'
   env:
     options: ${{ inputs.options }}
     command: ${{ inputs.command }}
