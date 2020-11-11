@@ -1,6 +1,10 @@
 # Molecule action
 
-A GitHub action to tests your [Ansible](https://www.ansible.com/) role using [Molecule](https://molecule.readthedocs.io/en/stable/).
+A GitHub action to test your [Ansible](https://www.ansible.com/) role using [Molecule](https://molecule.readthedocs.io/en/stable/).
+
+For information on this Python package see [`README.rst`](README.rst).
+
+This GitHub action is based on https://github.com/robertdebock/molecule-action/tree/79ad4ffcb2c2e97c2b451753e1bfc1c17473602c
 
 ## Requirements
 

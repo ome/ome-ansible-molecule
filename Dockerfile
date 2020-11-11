@@ -26,4 +26,4 @@ RUN ln -fs /bin/bash /bin/sh && \
 
 ENV RETRIES=2
 
-CMD function retry { counter=0 ; until "$@" ; do exit=$? ; counter=$(($counter + 1)) ; if [ $counter -ge $RETRIES ] ; then return $exit ; fi ; done ; return 0; } ; cd ${GITHUB_REPOSITORY} ; if [ -f tox.ini -a ${command:-test} = test ] ; then retry tox ${options} ; else PY_COLORS=1 ANSIBLE_FORCE_COLOR=1 retry molecule ${command:-test} --scenario-name ${scenario:-default}; fi
+CMD function retry { counter=0 ; until "$@" ; do exit=$? ; counter=$(($counter + 1)) ; if [ $counter -ge $RETRIES ] ; then return $exit ; fi ; done ; return 0; } ; cd ${GITHUB_REPOSITORY} ; PY_COLORS=1 ANSIBLE_FORCE_COLOR=1 retry molecule ${command:-test} --scenario-name ${scenario:-default};
