@@ -66,7 +66,7 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        'ansible==2.9.11',
+        'ansible==2.8.18',
         'docker-compose==1.26.2',
         'molecule==2.22',
         'jmespath==0.10.0',
