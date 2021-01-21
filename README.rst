@@ -1,30 +1,14 @@
 Dependencies for testing OME Ansible roles with Molecule
 ========================================================
 
-.. image:: https://travis-ci.org/ome/ome-ansible-molecule.png
-   :target: https://travis-ci.org/ome/ome-ansible-molecule
+.. image:: https://github.com/ome/ome-ansible-molecule/workflows/PyPI/badge.svg
+   :target: https://github.com/ome/ome-ansible-molecule/actions/
 
 .. image:: https://badge.fury.io/py/ome-ansible-molecule.svg
     :target: https://badge.fury.io/py/ome-ansible-molecule
 
-A meta-package that installs common dependencies required to test most `OME Ansible Galaxy roles <https://galaxy.ansible.com/openmicroscopy/>`_.
+A meta-package that installs common dependencies required to test most
+`OME Ansible Galaxy roles <https://galaxy.ansible.com/ome/>`_.
 
-Example ``.travis.yml`` file for testing Ansible roles:
-
-..  code-block:: yaml
-
-    ---
-    sudo: required
-    language: python
-
-    services:
-      - docker
-
-    install:
-      - pip install "ome-ansible-molecule<0.5"
-
-    script:
-      - molecule test
-
-    notifications:
-      webhooks: https://galaxy.ansible.com/api/v1/notifications/
+See https://github.com/ome/action-ome-ansible-molecule for an example of
+GitHub action consuming this package in a GitHub workflow
