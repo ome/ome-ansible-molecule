@@ -70,6 +70,7 @@ setup(
         'docker-compose==1.26.2',
         'molecule==2.22',
         'jmespath==0.10.0',
+        'passlib==1.7.4; sys_platform=="darwin"',
     ],
     python_requires='>=3.6',
 )
