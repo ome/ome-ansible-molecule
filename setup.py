@@ -71,6 +71,8 @@ setup(
         'molecule==2.22',
         'jmespath==0.10.0',
         'passlib==1.7.4; sys_platform=="darwin"',
+        # https://github.com/ansible-community/ansible-lint/issues/1795
+        "rich<11.0.0",
     ],
     python_requires='>=3.6',
 )
