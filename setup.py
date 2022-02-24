@@ -48,7 +48,7 @@ setup(
         'Topic :: Software Development :: Testing',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        "License :: OSI Approved :: BSD License",
 
         # Specify the Python versions you support here.
         'Programming Language :: Python :: 3',
