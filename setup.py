@@ -48,7 +48,7 @@ setup(
         'Topic :: Software Development :: Testing',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        "License :: OSI Approved :: BSD License",
 
         # Specify the Python versions you support here.
         'Programming Language :: Python :: 3',
@@ -66,7 +66,7 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
-        'ansible==2.8.18',
+        'ansible==2.9.27',
         'docker-compose==1.26.2',
         'molecule==2.22',
         'jmespath==0.10.0',
